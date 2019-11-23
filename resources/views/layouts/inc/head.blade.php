@@ -20,7 +20,7 @@
 <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css">
 
 
-
+<link rel="stylesheet" href="{{asset('css/submit.css')}}">
     <script src="{{ asset('js/axios.min.js')}}"></script>
     <script src="{{ asset('js/vue-dev.js')}}"></script>
 

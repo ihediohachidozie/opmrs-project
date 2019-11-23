@@ -49,6 +49,7 @@ new Vue({
            this.doctor = this.getName(pharm.doctor_id);
             this.prescription = pharm.prescription;
             this.drugs = pharm.drugs;
+            this.bool = false;
            //this.consultancy_id = pharm.consultancy_id;
             this.id = pharm.id;
             $("#drugs").modal('show');

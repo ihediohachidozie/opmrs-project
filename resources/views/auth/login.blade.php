@@ -16,7 +16,7 @@
                     <div class="text-center">
                       <h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
                     </div>
-                    <form class="user" method="POST" action="{{ route('login') }}">
+                    <form class="user form-prevent-multiple-submits" method="POST" action="{{ route('login') }}">
                       @csrf
                       <div class="form-group">
                         <input type="text" class="form-control form-control-user" name="username" id="exampleInputUsername" aria-describedby="emailHelp" placeholder="Enter National Identity Number  or email..." autocomplete="off" autofocus>
@@ -32,7 +32,7 @@
                           <label class="custom-control-label" for="customCheck">Remember Me</label>
                         </div>
                       </div>
-                      <button type="submit" class="btn btn-primary btn-user btn-block">
+                      <button type="submit" class="btn btn-primary btn-user btn-block button-prevent-multiple-submits" >
                         Login
                       </button>
                     </form>
@@ -56,4 +56,4 @@
     </div>
   </div>
 </body>
-
+<script src="{{ asset('js/submit.js') }}"></script>

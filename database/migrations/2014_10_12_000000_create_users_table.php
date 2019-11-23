@@ -18,10 +18,7 @@ class CreateUsersTable extends Migration
             $table->string('firstname');
             $table->string('lastname');
             $table->string('email')->unique();
-            $table->integer('national_id')->unique();
-          //  $table->integer('practitioner_id')->nullable();
-           // $table->integer('license')->nullable();
-          //  $table->integer('validility')->nullable();
+            $table->string('national_id')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->string('image')->nullable();

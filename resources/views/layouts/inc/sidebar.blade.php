@@ -114,9 +114,9 @@
           </a>
           <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-              <a class="collapse-item" href="{{route('Consultancy.create')}}">Nurse</a>
-              <a class="collapse-item" href="{{route('physician')}}">Physician</a>
-              <a class="collapse-item" href="{{route('Labtest.index')}}">Lab. Test</a>
+              <a class="collapse-item" href="{{route('Consultancy.create')}}">Patient Admission</a>
+              <a class="collapse-item" href="{{route('physician')}}">Consultant</a>
+              <a class="collapse-item" href="{{route('Labtest.index')}}">Laboratory</a>
               <a class="collapse-item" href="{{route('Pharmacy.index')}}">Pharmacy</a>   
             </div>
           </div>

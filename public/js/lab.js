@@ -51,7 +51,8 @@ new Vue({
             this.doctor = this.getName(test.doctor_id);
             this.test_sample = test.test_sample;
             this.test_required = test.test_required;
-            this.id = test.id;  
+            this.id = test.id; 
+            this.bool = false; 
             $("#test").modal('show');
         },
         onSubmit(){

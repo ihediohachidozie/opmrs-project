@@ -21,7 +21,7 @@ class CreateProfilesTable extends Migration
             $table->string('phone')->nullable();
             $table->integer('marital_status')->nullable();
             $table->integer('religion')->nullable();
-            $table->integer('gender')->nullable();
+            $table->string('gender')->nullable();
             $table->integer('blood_group')->nullable();
             $table->string('drug_allergies')->nullable();
             $table->string('food_allergies')->nullable();

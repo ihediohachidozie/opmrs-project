@@ -13,6 +13,7 @@
         <link href="assets/welpg/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
         <!-- Custom fonts for this template -->
+        
         <link href="assets/welpg/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
         <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
         <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
@@ -21,6 +22,8 @@
 
         <!-- Custom styles for this template -->
         <link href="assets/welpg/css/agency.min.css" rel="stylesheet">
+
+
 
     </head>
     <body id="page-top">
@@ -34,24 +37,81 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav text-uppercase ml-auto">
-                        @if (Route::has('login'))
-                            @auth
-                                <li class="nav-item">
-                                    <a class="nav-link js-scroll-trigger" href="{{ url('/dashboard') }}">Home</a>
-                                </li>
-                                
-                            @else
-                                <li class="nav-item">
-                                    <a class="nav-link js-scroll-trigger" href="{{ route('login') }}">Login</a>
-                                </li>
-                                @if (Route::has('register'))
-                                    <li class="nav-item">
-                                        <a class="nav-link js-scroll-trigger" href="{{ route('register') }}">Register</a>
-                                    </li>                     
+                        <div class="dropdown nav-item">
+                            <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
+                                <i class="fas fa-fw fa-user"></i>
+                                Patient
+                            </a>
+                            <div class="dropdown-menu">
+                                @if (Route::has('login'))
+                                    @auth('web')
+                                        <li class="nav-item">
+                                            <a class="dropdown-item" href="{{ url('/home') }}">Home</a>
+                                        </li>
+                                        
+                                    @else
+                                        <a class="dropdown-item" href="{{ route('login') }}">Login</a>
+                                        @if (Route::has('register'))     
+                                            <a class="dropdown-item " href="{{ route('register') }}">Register</a>                              
+                                        @endif
+
+                                    @endauth                          
+
                                 @endif
-                            @endauth
-                             
-                        @endif
+
+
+                            </div>
+                        </div>
+                        <div class="dropdown nav-item">
+                            <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
+                                <i class="fas fa-fw fa-hospital"></i>
+                                Hospital
+                            </a>
+                            <div class="dropdown-menu">
+                                @if (Route::has('hospital.login'))
+                                    @auth('practitioner')
+                                        <li class="nav-item">
+                                            <a class="dropdown-item" href="{{ url('/hospital') }}">Home</a>
+                                        </li>
+                                        
+                                    @else
+                                        <a class="dropdown-item" href="{{ route('hospital.login') }}">Login</a>
+                                        @if (Route::has('hospital.register'))     
+                                            <a class="dropdown-item " href="{{ route('hospital.register') }}">Register</a>                              
+                                        @endif
+
+                                    @endauth                          
+
+                                @endif
+
+
+                            </div>
+                        </div>  
+                        <div class="dropdown nav-item">
+                            <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
+                                <i class="fas fa-fw fa-user-md"></i>
+                                Medical Practitioners
+                            </a>
+                            <div class="dropdown-menu">
+                                @if (Route::has('practitioner.login'))
+                                    @auth('practitioner')
+                                        <li class="nav-item">
+                                            <a class="dropdown-item" href="{{ url('/practitioner') }}">Home</a>
+                                        </li>
+                                        
+                                    @else
+                                        <a class="dropdown-item" href="{{ route('practitioner.login') }}">Login</a>
+                                        @if (Route::has('practitioner.register'))     
+                                            <a class="dropdown-item " href="{{ route('practitioner.register') }}">Register</a>                              
+                                        @endif
+
+                                    @endauth                          
+
+                                @endif
+
+
+                            </div>
+                        </div>                        
 
                     </ul>
                 </div>

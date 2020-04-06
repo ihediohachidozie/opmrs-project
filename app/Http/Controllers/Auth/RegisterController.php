@@ -28,7 +28,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = 'dashboard';
+    protected $redirectTo = 'home';
 
     /**
      * Create a new controller instance.
@@ -37,7 +37,7 @@ class RegisterController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('guest');
+        $this->middleware('auth');
     }
 
     /**
@@ -47,10 +47,12 @@ class RegisterController extends Controller
      * @return \Illuminate\Contracts\Validation\Validator
      */
     protected function validator(array $data)
-    {
+    { 
         return Validator::make($data, [
             'firstname' => ['required', 'string', 'max:255'],
+            'middlename' => ['sometimes', 'string', 'max:255'],
             'lastname' => ['required', 'string', 'max:255'],
+            'phone' => ['required', 'string', 'unique:users'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'national_id' => ['required', 'numeric', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
@@ -67,7 +69,9 @@ class RegisterController extends Controller
     {
         return User::create([
             'firstname' => $data['firstname'],
+            'middlename' => $data['middlename'],
             'lastname' => $data['lastname'],
+            'phone' => $data['phone'],
             'national_id' => $data['national_id'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),

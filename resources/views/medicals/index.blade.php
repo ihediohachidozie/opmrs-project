@@ -108,4 +108,4 @@
 
     </div>  
     <script src="{{ asset('js/consult.js')}}"></script>
-@endsection
+@endsection 

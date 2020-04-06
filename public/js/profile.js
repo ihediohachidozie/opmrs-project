@@ -16,6 +16,17 @@ var profile = new Vue({
         relationship: '',
         emg_name: '',
         emg_phone: '',
+        relationship1: '',
+        emg_name1: '',
+        emg_phone1: '',
+        relationship2: '',
+        emg_name2: '',
+        emg_phone2: '',
+        offaddress: '',
+        lga: '',
+        country: '',
+        state: '',
+        qualification: '',
         phone: '',
         blood_group: '',
         marital_status: '',
@@ -47,6 +58,16 @@ var profile = new Vue({
             2: "Sibling",
             3: "Uncle",
             4: "Aunty"
+        },
+        languages: {
+            0: "English",
+            1: "Igbo",
+            2: "Hausa",
+            3: "Yoruba",
+            4: "Fula",
+            5: "Efik",
+            6: "Ijaw",
+            7: "Ibibio"
         }
 
 
@@ -72,6 +93,7 @@ var profile = new Vue({
                     this.dob = data[0].dob;
                     this.gender = data[0].gender;
                     this.address = data[0].address;
+                    this.offaddress = data[0].offaddress;
                     this.env_allergies = data[0].env_allergies;
                     this.food_allergies = data[0].food_allergies;
                     this.drug_allergies = data[0].drug_allergies;
@@ -79,6 +101,16 @@ var profile = new Vue({
                     this.emg_name = data[0].emg_name;
                     this.emg_phone = data[0].emg_phone;
                     this.phone = data[0].phone;
+                    this.relationship1 = data[0].relationship1;
+                    this.emg_name1 = data[0].emg_name1;
+                    this.emg_phone1 = data[0].emg_phone1;
+                    this.relationship2 = data[0].relationship2;
+                    this.emg_name2 = data[0].emg_name2;
+                    this.emg_phone2 = data[0].emg_phone2;
+                    this.lga = data[0].lga;
+                    this.state = data[0].state;
+                    this.country = data[0].country;
+                    this.qualification = data[0].qualification;
                     this.blood_group = data[0].blood_group;
                     this.marital_status = data[0].marital_status;
                     this.religion = data[0].religion;

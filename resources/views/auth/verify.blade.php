@@ -1,6 +1,6 @@
-@extends('layouts.app')
+@include('layouts.inc.head')
 
-@section('content')
+<body class="bg-gradient-primary">
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -25,4 +25,4 @@
         </div>
     </div>
 </div>
-@endsection
+</body>

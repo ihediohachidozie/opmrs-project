@@ -46,6 +46,28 @@ return [
             'provider' => 'users',
             'hash' => false,
         ],
+
+        'practitioner' => [
+            'driver' => 'session',
+            'provider' => 'practitioners',
+        ],
+
+        'practitioner-api' => [
+            'driver' => 'token',
+            'provider' => 'practitioners',
+            'hash' => false,
+        ],
+
+        'hospital' => [
+            'driver' => 'session',
+            'provider' => 'hospitals',
+        ],
+
+        'hospital-api' => [
+            'driver' => 'token',
+            'provider' => 'hospitals',
+            'hash' => false,
+        ],
     ],
 
     /*
@@ -70,7 +92,14 @@ return [
             'driver' => 'eloquent',
             'model' => App\User::class,
         ],
-
+        'practitioners' => [
+            'driver' => 'eloquent',
+            'model' => App\Practitioner::class,
+        ],
+        'hospitals' => [
+            'driver' => 'eloquent',
+            'model' => App\Hospital::class,
+        ],
         // 'users' => [
         //     'driver' => 'database',
         //     'table' => 'users',
@@ -97,6 +126,16 @@ return [
             'provider' => 'users',
             'table' => 'password_resets',
             'expire' => 60,
+        ],
+        'practitioners' => [
+            'provider' => 'practitioners',
+            'table' => 'password_resets',
+            'expire' => 15,
+        ],
+        'hospitals' => [
+            'provider' => 'hospitals',
+            'table' => 'password_resets',
+            'expire' => 15,
         ],
     ],
 

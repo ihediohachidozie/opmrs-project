@@ -11,7 +11,8 @@ class ConsultancyController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware('auth:practitioner');
+        //$this->middleware('auth');
     }
     /**
      * Display a listing of the resource.
@@ -34,8 +35,8 @@ class ConsultancyController extends Controller
     public function create()
     {
         //
-        $p = practitional::where('user_id', auth()->id())->pluck('profession');
-        return view('medicals.index', compact('p'));
+
+        return view('medicals.index');
     }
 
     public function getConsult(){
@@ -50,8 +51,8 @@ class ConsultancyController extends Controller
     {
         //
         $consults = Consultancy::with('user')->where('status', 0)->get();
-        $p = practitional::where('user_id', auth()->id())->pluck('profession');
-        return view('medicals.doctor', compact('consults', 'p'));
+
+        return view('medicals.doctor', compact('consults'));
     }
 
     /**
@@ -100,9 +101,9 @@ class ConsultancyController extends Controller
     public function edit($id)
     {
         //
-        $p = practitional::where('user_id', auth()->id())->pluck('profession');
+
         $consultancy = Consultancy::with('user')->where('id', $id)->get();
-        return view('medicals.edit', compact('consultancy', 'p'));
+        return view('medicals.edit', compact('consultancy'));
     }
 
     /**
@@ -144,14 +145,14 @@ class ConsultancyController extends Controller
 
     public function history()
     {
-        $p = practitional::where('user_id', auth()->id())->pluck('profession');
-        return view('records/consultancy', compact('consults', 'p'));        
+
+        return view('records/consultancy');        
     }
 
     public function userhistory()
     {
-        $p = practitional::where('user_id', auth()->id())->pluck('profession');
-        return view('medicals/consults', compact('consults', 'p'));         
+
+        return view('medicals/consults', compact('consults'));         
     }
 
     public function getMed($id)

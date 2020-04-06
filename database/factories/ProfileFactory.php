@@ -11,7 +11,7 @@ $factory->define(Profile::class, function (Faker $faker) {
         'user_id' => factory(App\User::class),
         'dob' => $faker->date,
         'address' => $faker->address,
-        'phone' => $faker->phoneNumber,
+        'language' => $faker->numberBetween(0,6),
         'marital_status' => $faker->numberBetween(0,5),
         'religion' => $faker->numberBetween(0,4),
         'gender' => $faker->numberBetween(0,1),

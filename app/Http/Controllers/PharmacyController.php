@@ -12,7 +12,7 @@ class PharmacyController extends Controller
     
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware('auth:practitioner');
     }
     /**
      * Display a listing of the resource.
@@ -22,8 +22,8 @@ class PharmacyController extends Controller
     public function index()
     {
         //
-        $p = practitional::where('user_id', auth()->id())->pluck('profession');
-        return view('pharm.index', \compact('p'));
+
+        return view('pharm.index');
     }
     public function getPharms()
     {

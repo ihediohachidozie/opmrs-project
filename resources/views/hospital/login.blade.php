@@ -14,13 +14,22 @@
                 <div class="col-lg-6">
                   <div class="p-5">
                     <div class="text-center">
-                      <h1 class="h4 text-gray-900 text-uppercase">Patient's Login</h1>
+                      <h1 class="h4 text-gray-900 text-uppercase">Hospital's Login</h1>
                       <hr>
+
+                      @if (session('status'))
+                        <div class="alert alert-danger fade show" role="alert">
+                          {{ session('status') }}
+
+                        </div>
+                      @endif
+
                     </div>
-                    <form class="user form-prevent-multiple-submits" method="POST" action="{{ route('login') }}">
+                    <form class="user form-prevent-multiple-submits" method="POST" action="{{ route('practitioner.login.submit') }}">
                       @csrf
+
                       <div class="form-group">
-                        <input type="text" class="form-control form-control-user" name="username" id="exampleInputUsername" aria-describedby="emailHelp" placeholder="Enter Phone  or Email..." autocomplete="off" autofocus>
+                        <input type="text" class="form-control form-control-user" name="username" id="exampleInputUsername" aria-describedby="emailHelp" value="{{old('username') ?? ''}}" placeholder="Enter Phone  or Email..." autocomplete="off" autofocus required>
                         <div class="text-danger small mt-2">{{ $errors->first('phone') ? 'Email or Phone required' : '' }}</div>
                       </div>
                       <div class="form-group">
@@ -42,7 +51,7 @@
                       <a class="small" href="{{ route('password.request') }}">Forgot Password?</a>
                     </div>
                     <div class="text-center">
-                      <a class="small" href="{{route('register')}}">Create an Account!</a>
+                      <a class="small" href="{{route('practitioner.register')}}">Create an Account!</a>
                     </div>
                     <div class="text-center">
                       <a class="small" href="/">Back to Home</a>
@@ -57,4 +66,4 @@
     </div>
   </div>
 </body>
-<script src="{{ asset('js/submit.js') }}"></script>
+

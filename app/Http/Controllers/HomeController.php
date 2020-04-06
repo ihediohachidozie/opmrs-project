@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\practitional;
+//use App\practitional;
 
 
 use Illuminate\Http\Request;
@@ -15,6 +15,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
+       // $this->middleware(['auth' => 'verified']);
         $this->middleware('auth');
     }
 
@@ -27,17 +28,15 @@ class HomeController extends Controller
     {
         return view('home');
     }
-    public function dashboard()
+/*     public function dashboard()
     {
         $p = practitional::where('user_id', auth()->id())->pluck('profession');
-
-        //Config::write('p', $p);
 
         return view('dashboard', compact('p'));
     }
     public function blank()
     {
         return view('blank');
-    }
+    } */
 
 }

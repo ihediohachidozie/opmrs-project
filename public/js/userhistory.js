@@ -30,24 +30,14 @@ new Vue({
 
     },
     created() {
-        this.getUsers();
+        this.getMedPract();
         this.onLoad();
         this.getName();
 
     },
     methods: {
-        getInfo() {
-            this.name = "";
-            axios.get('/user/' + this.national_id)
-                .then(({ data }) => {
-                    this.user_id = data[0].id;
-                    this.name = data[0].firstname + " " + data[0].lastname;
-                    this.display();
-                });
-            // alert(this.user_id);
-        },
-        getUsers() {
-            axios.get('/users')
+        getMedPract() {
+            axios.get('/medpract')
                 .then(({ data }) => this.users = data);
         },
         getName(e) {
@@ -58,48 +48,18 @@ new Vue({
             }
 
         },
-        userID() {
-            axios.get('/userId')
-                .then(({ data }) => this.nurse_id = data[0].id);
-        },
         onBMI() {
             this.bmi = parseInt(this.weight) / parseInt(this.height);
         },
-        clear() {
-            this.nin = this.patient = this.temp = this.name = this.bp = this.bsl = this.pulse = this.height = this.weight = this.bmi = "";
-        },
         onLoad() {
-            axios.get('/userconsults')
+            axios.get('/usermedhistory')
                 .then(({ data }) => this.consults = data);
-        },
-        onSubmit() {
-            //alert('u just clicked submit!');
-            axios.post('/Consultancy', this.$data)
-                .then(this.onSuccess)
-                .catch(error => {
-                    alert(error.response.data.message)
-                });
-        },
-        onSuccess(response) {
-            //this.message = response.data.message;
-            alert(response.data.message);
-            this.onLoad();
-            this.clear();
-            // $("#edit").modal('close');
         },
         getMed() {
 
-            this.getUsers();
+            this.getMedPract();
             this.getInfo();
             this.getName();
-
-        },
-        display() {
-            axios.get('/getmed/' + this.user_id)
-                .then(({ data }) => this.consults = data);
-            if (this.consults.length > 0) {
-                alert('No record found')
-            }
 
         },
         viewInfo(e) {
@@ -119,16 +79,15 @@ new Vue({
 
         },
         getLab() {
-            axios.get('/tests/' + this.id)
+            axios.get('/labtest/' + this.id)
                 .then(({ data }) => this.tests = data);
         },
         getPham() {
-            axios.get('/pham/' + this.id)
+            axios.get('/drugs/' + this.id)
                 .then(({ data }) => {
                     this.drugs = data[0].drugs,
-                        this.prescriptions = data[0].prescription
-                }
-                );
+                    this.prescriptions = data[0].prescription
+            });
         }
     }
 });

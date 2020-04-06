@@ -1,4 +1,4 @@
-@extends('layouts.app1')
+@extends('layouts.app')
 @section('content')
     
     <div id="profile" class="container-fluid">
@@ -70,27 +70,27 @@
                             <div class="form-group row">
                                 <div class="col-sm-6">
                                     <label for="" class="small font-weight-bold">Office Address</label>
-                                    <input type="text" class="form-control form-control-user" id="exampleInputEmail" name="offaddress" v-model="offaddress">
+                                    <input type="text" class="form-control form-control-user" id="exampleInputEmail" name="address" v-model="address">
                                     
                                 </div>
                                 <div class="col-sm-6 mb-2 mb-sm-0">
                                     <label for="" class="small font-weight-bold">Educational Qualification</label>
-                                    <input type="text" name="qualification" id="" class="form-control form-control-user" v-model="qualification">
+                                    <input type="text" name="qualification" id="" class="form-control form-control-user">
                                 </div>
 
                             </div>
                             <div class="form-group row">
                                 <div class="col-sm-4">
                                     <label for="" class="small font-weight-bold">Country</label>
-                                    <input type="text" name="country" id="" class="form-control form-control-user" v-model="country">
+                                    <input type="text" name="country" id="" class="form-control form-control-user">
                                 </div>
                                 <div class="col-sm-4 mb-2 mb-sm-0">
                                     <label for="" class="small font-weight-bold">State</label>
-                                    <input type="text" name="state" id="" class="form-control form-control-user" v-model="state">
+                                    <input type="text" name="state" id="" class="form-control form-control-user">
                                 </div>
                                 <div class="col-sm-4">
                                     <label for=""  class="small font-weight-bold">LGA</label>
-                                    <input type="text" name="lga" id="" class="form-control form-control-user" v-model="lga">
+                                    <input type="text" name="lga" id="" class="form-control form-control-user">
                                 </div>
 
                             </div>
@@ -187,17 +187,17 @@
                             <div class="form-group row">
                                 <div class="col-sm-6 mb-sm-0">
                                     <label for="" class="small font-weight-bold">Contact Name - II</label>
-                                    <input type="text" class="form-control form-control-user" id="exampleFirstName" name="emg_name1" v-model="emg_name1">
+                                    <input type="text" class="form-control form-control-user" id="exampleFirstName" name="emg_name" v-model="emg_name">
                                 
                                 </div>
                                 <div class="col-sm-3 mb-sm-0">
                                     <label for="" class="small font-weight-bold">Phone</label>
-                                    <input type="text" class="form-control form-control-user" id="exampleFirstName" name="emg_phone1" v-model="emg_phone1">
+                                    <input type="text" class="form-control form-control-user" id="exampleFirstName" name="emg_phone" v-model="emg_phone">
                                     
                                 </div>
                                 <div class="col-sm-3 mb-sm-0">
                                     <label for="" class="small font-weight-bold">Relationship</label>
-                                    <select class="form-control" v-model="relationship1"  >
+                                    <select class="form-control" v-model="relationship"  >
                                         <option>Select...</option>
                                         <option v-for="(name, value) in relationships" :value="value">
                                             @{{name}}
@@ -210,17 +210,17 @@
                             <div class="form-group row">
                                 <div class="col-sm-6 mb-sm-0">
                                     <label for="" class="small font-weight-bold">Contact Name - III</label>
-                                    <input type="text" class="form-control form-control-user" id="exampleFirstName" name="emg_name2" v-model="emg_name2">
+                                    <input type="text" class="form-control form-control-user" id="exampleFirstName" name="emg_name" v-model="emg_name">
                                 
                                 </div>
                                 <div class="col-sm-3 mb-sm-0">
                                     <label for="" class="small font-weight-bold">Phone</label>
-                                    <input type="text" class="form-control form-control-user" id="exampleFirstName" name="emg_phone2" v-model="emg_phone2">
+                                    <input type="text" class="form-control form-control-user" id="exampleFirstName" name="emg_phone" v-model="emg_phone">
                                     
                                 </div>
                                 <div class="col-sm-3 mb-sm-0">
                                     <label for="" class="small font-weight-bold">Relationship</label>
-                                    <select class="form-control" v-model="relationship2"  >
+                                    <select class="form-control" v-model="relationship"  >
                                         <option>Select...</option>
                                         <option v-for="(name, value) in relationships" :value="value">
                                             @{{name}}

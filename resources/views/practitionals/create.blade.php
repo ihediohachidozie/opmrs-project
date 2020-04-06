@@ -193,7 +193,7 @@
         
                 </div>
             </div>
-        </div>
+        </div> 
     </div>
         
 <script src="{{ asset('js/practition.js')}}"></script> 

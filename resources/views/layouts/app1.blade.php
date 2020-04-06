@@ -1,9 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-
+<!doctype html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     
-    @include('layout.inc.head')
+    @include('layouts.inc.head')
 
 </head>
 
@@ -13,7 +12,7 @@
         <div id="wrapper">
 
             <!-- Sidebar -->
-           
+            @include('layouts.inc.sidebar1')
             <!-- End of Sidebar -->
 
             <!-- Content Wrapper -->
@@ -21,16 +20,14 @@
 
                 <!-- Main Content -->
                 <div id="content">
-
+ 
                     <!-- Topbar -->
-                    @include('layout.inc.navbar')
+                    @include('layouts.inc.navbar1')
                     <!-- End of Topbar -->
 
                     <!-- Begin Page Content -->
-                    <div class="container-fluid">
-
-                        @yield('content')
-
+                    <div id="app" class="container-fluid">
+                        @yield('content')                    
                     </div>
                     <!-- /.container-fluid -->
 
@@ -38,7 +35,7 @@
                 <!-- End of Main Content -->
 
                 <!-- Footer -->
-                @include('layout.inc.footer')
+                @include('layouts.inc.footer')
                 <!-- End of Footer -->
 
             </div>
@@ -53,12 +50,11 @@
         </a>
 
         <!-- Logout Modal-->
-        @include('layout.inc.logout')
+        @include('layouts.inc.logout')
 
         <!-- footer-script-->
-        @include('layout.inc.footer-script')
+        @include('layouts.inc.footer-script')
 
 
     </body>
-
 </html>

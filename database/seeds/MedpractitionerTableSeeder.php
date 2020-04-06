@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class ProfileTableSeeder extends Seeder
+class MedpractitionerTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,7 +11,6 @@ class ProfileTableSeeder extends Seeder
      */
     public function run()
     {
-        //  
-        factory(\App\Profile::class, 7)->create();
+        factory(\App\Medpractitioner::class, 10)->create();
     }
 }

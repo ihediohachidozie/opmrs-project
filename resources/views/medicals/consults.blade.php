@@ -1,18 +1,11 @@
-@extends('layouts.app')
+@extends('layouts.app1')
 @section('content')
     
     <div id="consult" class="container-fluid">
         <!-- Page Heading -->
         <div class="card">
             <div class="card-header" id="headingOne">
-{{--                 <table class="table-borderless">
-                    <tr>
-                        <td><input class="form-control mr-sm-2" type="text" placeholder="Enter National Id" v-model="national_id"></td>
-                        <td><button class="btn btn-success" @click="getMed()" >Search</button></td>
-                    </tr>
-
-                </table> --}}
-                
+               
             </div>
             <div class="card-body table-responsive">
                 <table class="table table-striped " id="myTable">

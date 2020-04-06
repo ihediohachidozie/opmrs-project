@@ -7,7 +7,7 @@
 </head>
 
     <body id="page-top">
-
+  
         <!-- Page Wrapper -->
         <div id="wrapper">
 
@@ -20,7 +20,7 @@
 
                 <!-- Main Content -->
                 <div id="content">
-
+ 
                     <!-- Topbar -->
                     @include('layouts.inc.navbar')
                     <!-- End of Topbar -->

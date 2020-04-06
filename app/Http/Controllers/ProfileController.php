@@ -25,8 +25,7 @@ class ProfileController extends Controller
     public function index()
     {
         //
-        $p = practitional::where('user_id', auth()->id())->pluck('profession');
-        return view('proflie', compact('p'));
+        return view('proflie');
     }
 
     /**
@@ -37,10 +36,10 @@ class ProfileController extends Controller
     public function create()
     {
         //
-        $p = practitional::where('user_id', auth()->id())->pluck('profession');
+        
         $profile = new Profile();
-     
-        return view('profile.create', compact('profile', 'p'));
+ 
+        return view('profile.create', compact('profile'));      
     }
 
     public function userDetails()
@@ -67,6 +66,7 @@ class ProfileController extends Controller
         $userdata = request()->validate([
             'firstname' => 'required',
             'lastname' => 'required',
+            'phone' => 'required',
         ]);
 
         $data = request()->validate([
@@ -84,6 +84,17 @@ class ProfileController extends Controller
             'blood_group'=> 'sometimes',
             'marital_status'=> 'sometimes',
             'religion'=> 'sometimes',
+            'lga' => 'sometimes',
+            'state' => 'sometimes',
+            'country' => 'sometimes',
+            'qualification' => 'sometimes',
+            'offaddress' => 'sometimes',
+            'relationship1'=> 'sometimes',
+            'emg_name1'=> 'sometimes',
+            'emg_phone1'=> 'sometimes',
+            'relationship2'=> 'sometimes',
+            'emg_name2'=> 'sometimes',
+            'emg_phone2'=> 'sometimes',
         ]);
 
         $user->update($userdata);
